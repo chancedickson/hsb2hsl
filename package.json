@@ -1,0 +1,17 @@
+{
+  "name": "hsb2hsl",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Chance Dickson <me@chancedickson.com>",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "parcel index.html"
+  },
+  "dependencies": {
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "parcel": "^1.11.0"
+  }
+}
