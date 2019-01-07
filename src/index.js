@@ -30,12 +30,20 @@ function text(set) {
   };
 }
 
+function copy(s) {
+  return () => {
+    navigator.clipboard.writeText(s);
+  };
+}
+
 function App() {
   const [h, setH] = useState(0);
   const [s, setS] = useState(0);
   const [b, setB] = useState(0);
 
   const hsl = hsb2hsl([h, s, b]);
+
+  const hslString = `hsl(${hsl[0]}deg, ${hsl[1]}%, ${hsl[2]}%)`;
 
   return (
     <React.Fragment>
@@ -57,7 +65,7 @@ function App() {
           <input type="text" onChange={text(setB)} value={b} />
         </label>
       </div>
-      <p>hsl({hsl[0]}deg, {hsl[1]}%, {hsl[2]}%)</p>
+      <p onClick={copy(hslString)}>{hslString}</p>
     </React.Fragment>
   );
 }
