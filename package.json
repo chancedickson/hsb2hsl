@@ -5,7 +5,8 @@
   "author": "Chance Dickson <me@chancedickson.com>",
   "license": "BSD-3-Clause",
   "scripts": {
-    "build": "parcel index.html"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "react": "^16.7.0-alpha.2",
