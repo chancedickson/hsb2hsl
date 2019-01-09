@@ -48,24 +48,27 @@ function App() {
   return (
     <React.Fragment>
       <div>
-        <label htmlFor="hue">Hue
-          <input type="range" name="hue" min="0" max="359" step="1" onChange={range(setH)} value={h} />
-          <input type="text" onChange={text(setH)} value={h} />
-        </label>
+        <div>
+          <label htmlFor="hue">Hue
+            <input type="range" name="hue" min="0" max="359" step="1" onChange={range(setH)} value={h} />
+            <input type="text" onChange={text(setH)} value={h} />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="saturation">Saturation
+            <input type="range" name="saturation" min="0" max="100" step="1" onChange={range(setS)} value={s} />
+            <input type="text" onChange={text(setS)} value={s} />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="brightness">Brightness
+            <input type="range" name="brightness" min="0" max="100" step="1" onChange={range(setB)} value={b} />
+            <input type="text" onChange={text(setB)} value={b} />
+          </label>
+        </div>
+        <p onClick={copy(hslString)}>{hslString}</p>
       </div>
-      <div>
-        <label htmlFor="saturation">Saturation
-          <input type="range" name="saturation" min="0" max="100" step="1" onChange={range(setS)} value={s} />
-          <input type="text" onChange={text(setS)} value={s} />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="brightness">Brightness
-          <input type="range" name="brightness" min="0" max="100" step="1" onChange={range(setB)} value={b} />
-          <input type="text" onChange={text(setB)} value={b} />
-        </label>
-      </div>
-      <p onClick={copy(hslString)}>{hslString}</p>
+      <div style={{height: '100px', width: '100px', backgroundColor: hslString}}></div>
     </React.Fragment>
   );
 }
