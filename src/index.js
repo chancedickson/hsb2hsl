@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
+function random(min = 0, max = 1) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 function hsb2hsl([h, s, b]) {
   s = s / 100;
   b = b / 100;
@@ -37,9 +41,9 @@ function copy(s) {
 }
 
 function App() {
-  const [h, setH] = useState(0);
-  const [s, setS] = useState(0);
-  const [b, setB] = useState(0);
+  const [h, setH] = useState(random(0, 361));
+  const [s, setS] = useState(random(25, 76));
+  const [b, setB] = useState(random(25, 76));
 
   const hsl = hsb2hsl([h, s, b]);
 
