@@ -70,9 +70,9 @@ function App() {
             <input type="text" onChange={text(setB)} value={b} />
           </label>
         </div>
-        <p onClick={copy(hslString)}>{hslString}</p>
+        <p style={{cursor: 'pointer'}} onClick={copy(hslString)}><code>{hslString}</code> (Click to copy)</p>
       </div>
-      <div style={{height: '100px', width: '100px', backgroundColor: hslString}}></div>
+      <div style={{height: '100px', width: '100px', backgroundColor: hslString, marginLeft: '2rem'}}></div>
     </React.Fragment>
   );
 }
