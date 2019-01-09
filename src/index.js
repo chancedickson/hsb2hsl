@@ -5,9 +5,9 @@ function hsb2hsl([h, s, b]) {
   s = s / 100;
   b = b / 100;
 
-  const l = (2 - s) * b / 2;
-  const s2 = l && l < 1 ? s * b / (l < 0.5 ? l * 2 : 2 - l * 2) : s;
-  return [h, Math.floor(s2 * 100), Math.floor(l * 100)];
+  const l = b / 2 * (2 - s);
+  const s2 = l && l < 1 ? s * b / (l < 0.5 ? l * 2 : 2 - l * 2) : 0;
+  return [h, Math.round(s2 * 100), Math.round(l * 100)];
 }
 
 function range(set) {
